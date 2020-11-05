@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        window.onload = () => {
+            const b0 = document.getElementById('b0')
+            const content = document.getElementById('content')
+
+            b0.onclick = (evt) => {
+                content.innerHTML += `
+                <div>
+                     click
+                </div>
+                `
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <input type="button" id="b0" value="click me">
+    <div id="content"></div>
+</body>
+
+</html>

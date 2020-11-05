@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>2.html</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            const todo = document.getElementById('todo')
+            const btn = document.getElementById('button')
+            const todoList = document.querySelector('#todoList')
+
+            btn.onclick = () => {
+                // if (todo.value) {
+                //     todoList.innerHTML += `
+                //     <li>${todo.value}</li>
+                //     `
+                // }
+
+                const todoEl = document.createElement('li')
+                todoEl.onclick = () => {
+                    todoEl.classList.toggle('done')
+                }
+                todoText = document.createTextNode(todo.value)
+                todoEl.appendChild(todoText)
+                todoList.appendChild(todoEl)
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type='text' id="todo">
+    <input type="button" value="add to do" id="button">
+    <ol id="todoList">
+
+    </ol>
+</body>
+
+</html>

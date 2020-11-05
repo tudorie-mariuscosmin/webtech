@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Meteo app</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script>
+        window.onload = async () => {
+            const city = document.getElementById('city')
+            const btn = document.getElementById('getWeatherBtn')
+            const wind = document.getElementById('wind')
+            btn.onclick = async () => {
+                try {
+                    const response = await fetch(`http://localhost:8080/weather?city=${city.value}`)
+                    const responseContent = await response.json();
+                    console.log(responseContent)
+                    wind.innerHTML += responseContent.properties.vant
+                } catch (err) {
+
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" id="city">
+    <input type="button" value="get wind speed" id="getWeatherBtn">
+    <div id="wind"></div>
+
+</body>
+
+</html>

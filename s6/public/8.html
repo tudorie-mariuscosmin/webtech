@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Title</title>
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+    </style>
+    <script>
+        window.onload = () => {
+            let td = document.querySelectorAll('td:last-child')
+            td.forEach(item => {
+                console.log(item)
+                item.onclick = () => {
+                    item.classList.toggle('done')
+                    if (item.classList.contains('done')) {
+                        item.innerHTML = 'done'
+                    } else {
+                        item.innerHTML = 'not done'
+                    }
+                }
+            })
+
+        }
+    </script>
+</head>
+
+<body>
+    <table id=t0>
+        <tr>
+            <td>item 1</td>
+            <td>not done</td>
+        </tr>
+        <tr>
+            <td>item 2</td>
+            <td>not done</td>
+        </tr>
+    </table>
+</body>
+
+</html>

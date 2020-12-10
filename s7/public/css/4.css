@@ -1,0 +1,9 @@
+img{
+    width:200px;
+    transition: width linear 3s;
+}
+
+img:hover{
+    width: 500px;
+    border:3px dotted tomato
+}
